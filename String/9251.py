@@ -1,3 +1,6 @@
+# LCS Longest Common Subsequence
+# 가장 긴 부분 수열의 길이
+
 string1 = input()
 string2 = input()
 
