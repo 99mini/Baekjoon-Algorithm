@@ -1,5 +1,5 @@
 # (100+1+ | 01)+
-
+# TODO
 t = int(input())
 
 for _ in range(t):
