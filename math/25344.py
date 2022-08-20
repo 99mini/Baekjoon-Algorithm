@@ -14,6 +14,5 @@ while len(times) > 1:
     times.append(lcm(times[0],times[1]))
     times.pop(0)
     times.pop(0)
-    print(times)
 
 print(times[0])
