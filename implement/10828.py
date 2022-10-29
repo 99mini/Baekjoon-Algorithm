@@ -23,4 +23,4 @@ for _ in range(t):
         else:
             print(-1)
     else:
-        stack.append(operation[1])
+        stack.append(operation[1])    
