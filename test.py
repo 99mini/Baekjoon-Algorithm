@@ -1,4 +1,16 @@
-n = int(input())
-for _ in range(n):
-    s = input()
-    print(''.join([s[0],s[-1]]))
+a = [
+        [
+            [0,0,1],
+            [1,0,0]
+        ],
+        [
+            [0,0,1],
+            [1,0,0]
+        ]
+    ]
+
+r = True
+for h in a:
+    r &= any(-1 in e for e in h)
+
+print(r)
