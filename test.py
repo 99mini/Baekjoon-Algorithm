@@ -1,8 +1,2 @@
-a,b,v = map(int,input().split())
-m = (v - b) // (a - b)
-n = (v - b) % (a - b)
-
-if n != 0:
-    m += 1
-
-print(m)
+a = [1,2,3]
+print(a[-1])
