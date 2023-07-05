@@ -1,16 +1,8 @@
-a = [
-        [
-            [0,0,1],
-            [1,0,0]
-        ],
-        [
-            [0,0,1],
-            [1,0,0]
-        ]
-    ]
+a,b,v = map(int,input().split())
+m = (v - b) // (a - b)
+n = (v - b) % (a - b)
 
-r = True
-for h in a:
-    r &= any(-1 in e for e in h)
+if n != 0:
+    m += 1
 
-print(r)
+print(m)
