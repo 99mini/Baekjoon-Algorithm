@@ -1,4 +1,10 @@
 # git ingore
 
+# test
+test.py
+
 # 프로그래머스
 programmers.py
+
+# 비공개 폴더
+/censored
