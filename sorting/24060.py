@@ -1,52 +1,47 @@
 import sys
-
 input = sys.stdin.readline
 
-def merge_sort(arr):
-
-    def sort(low, high):
-        if high - low < 2:
-            return
-        mid = (low + high) // 2
-        sort(low, mid)
-        sort(mid, high)
-        merge(low, mid, high)
+def mergeSort(a):
+    if len(a) == 1:
+        return a
+    
+    mid = (len(a) + 1)//2
+    left = mergeSort(a[:mid])
+    right = mergeSort(a[mid:])
+    
+    a2 = []
+    i = 0
+    j = 0
+    
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            a2.append(left[i])
+            ans.append(left[i])
+            i += 1
+        else:
+            a2.append(right[j])
+            ans.append(right[j])
+            j += 1
+    
+    while i < len(left):
+        a2.append(left[i])
+        ans.append(left[i])
+        i += 1
         
+    while j < len(right):
+        a2.append(right[j])
+        ans.append(right[j])
+        j += 1
+        
+    return a2
 
-    def merge(low, mid, high):
-        temp = []
-        l, h = low, mid
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
 
-        while l < mid and h < high:
-            if arr[l] < arr[h]:
-                temp.append(arr[l])
-                saved.append(arr[l])
-                l += 1
-            else:
-                temp.append(arr[h])
-                saved.append(arr[h])
-                h += 1
+ans = []
+mergeSort(a)
 
-        while l < mid:
-            temp.append(arr[l])
-            saved.append(arr[l])
-            l += 1
-        while h < high:
-            temp.append(arr[h])
-            saved.append(arr[h])
-            h += 1
-
-        for i in range(low, high):
-            arr[i] = temp[i - low]
-            
-    return sort(0, len(arr))
-
-n,k = map(int,input().split())
-A = list(map(int,input().split())) 
-saved = []
-merge_sort(A)
-
-if len(saved) >= k:
-    print(saved[k-1])
+if len(ans) >= k:
+    print(ans[k-1])
 else:
-    print(-1)
+    print(-1) 
